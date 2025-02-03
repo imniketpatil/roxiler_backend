@@ -1,0 +1,11 @@
+{
+  "name": "roxiler",
+  "version": "1.0.0",
+  "description": "Backend For Roxiler's Project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Niket",
+  "license": "ISC"
+}
