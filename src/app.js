@@ -1,10 +1,9 @@
 import express from "express";
-import cookieParser from "cookie-parser";
 import cors from "cors";
 
 const app = express();
 
-const allowedOrigins = ["http://localhost:5173"];
+const allowedOrigins = ["*"];
 
 // Configure CORS options
 const corsOptions = {
@@ -16,7 +15,7 @@ const corsOptions = {
       callback(new Error("Not allowed by CORS"));
     }
   },
-  methods: ["GET"],
+  methods: ["GET", "POST"],
   credentials: true,
   allowedHeaders: ["Content-Type", "Authorization"],
 };
@@ -26,8 +25,14 @@ app.use(cors(corsOptions));
 
 //middleware
 
+app.get("/niket", (req, res) => res.send("Hey Niket"));
+
 app.use(express.json({ limit: "16kb" }));
 app.use(express.urlencoded({ extended: true, limit: "16kb" }));
-app.use(cookieParser());
+
+//import Routes
+import productRouter from "./routes/product.routes.js";
+
+app.use("/api/v1/products", productRouter);
 
 export { app };
