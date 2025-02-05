@@ -6,7 +6,7 @@ const app = express();
 const allowedOrigins = [
   "https://roxiler-frontend-nine.vercel.app/",
   "https://roxiler-frontend-git-main-niket-patils-projects.vercel.app/",
-  "https://roxiler-frontend-c14sluh7c-niket-patils-projects.vercel.app/",
+  "https://roxiler-frontend-mevls5uet-niket-patils-projects.vercel.app/",
 ];
 
 // Configure CORS options
