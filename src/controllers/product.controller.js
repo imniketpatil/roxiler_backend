@@ -269,9 +269,7 @@ const getAllStatistics = asyncHandler(async (req, res) => {
     const { month } = req.query;
 
     if (!month) {
-      return res
-        .status(400)
-        .json(new ApiResponse(400, null, "Month is required"));
+      throw new ApiError(400, "Month value is required");
     }
 
     const [categoryStats, priceRangeStats, generalStats] = await Promise.all([
@@ -296,9 +294,7 @@ const getAllStatistics = asyncHandler(async (req, res) => {
         )
       );
   } catch (error) {
-    res
-      .status(500)
-      .json(new ApiResponse(500, null, "Unable to fetch statistics"));
+    throw new ApiError(500, "Unable to fetch statistics");
   }
 });
 
