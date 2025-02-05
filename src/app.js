@@ -3,7 +3,11 @@ import cors from "cors";
 
 const app = express();
 
-const allowedOrigins = ["http://localhost:5173"];
+const allowedOrigins = [
+  "https://roxiler-frontend-nine.vercel.app/",
+  "https://roxiler-frontend-git-main-niket-patils-projects.vercel.app/",
+  "https://roxiler-frontend-c14sluh7c-niket-patils-projects.vercel.app/",
+];
 
 // Configure CORS options
 const corsOptions = {
